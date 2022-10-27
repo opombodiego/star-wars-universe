@@ -1,2 +1,9 @@
 @import "primeng/index";
-@import "global/index";
+
+* { font-family: sans-serif;}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--surface-ground);
+}
