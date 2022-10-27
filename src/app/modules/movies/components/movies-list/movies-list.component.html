@@ -11,7 +11,7 @@
 
   <p-carousel [value]="moviesList" [numVisible]="4" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
     <ng-template let-movie pTemplate="item">
-      <p-card header="{{movie.title}}" (click)="showDetails(movie.episode_id)">
+      <p-card header="{{movie.title}}" (click)="showDetails(movie.url)">
         <ng-template pTemplate="header">
           <img src="./../../assets/episode_{{ movie.episode_id }}.jpg" height="420">
         </ng-template>

@@ -39,8 +39,8 @@ export class MoviesListComponent implements OnInit {
     ];
   }
 
-  showDetails(id) {
-    this.router.navigate([`movies/details/${id}`]);
+  showDetails(idUrl) {
+    this.router.navigate([`movies/details/${idUrl.substring(28)}`]);
   }
 
 }
