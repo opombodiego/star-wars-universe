@@ -31,4 +31,10 @@
 
     <p-paginator [rows]="10" [totalRecords]="totalRecords" [first]="currentPage" (onPageChange)="onPageChange($event)"></p-paginator>
   </p-card>
+
+  <div class="flex justify-content-end">
+    <div class="flex align-items-center justify-content-center">
+      <button pButton type="button" label="Voltar" class="mt-4 p-button-secondary" (click)="back()"></button>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ApiService } from '../../../../services/api.service';
 
@@ -14,6 +15,7 @@ export class CharactersListComponent implements OnInit {
   currentPage = 0;
 
   constructor(
+    private router: Router,
     private api: ApiService
   ) { }
 
@@ -37,4 +39,9 @@ export class CharactersListComponent implements OnInit {
   onPageChange(e) {
     this.getListCharacters(e.page + 1)
   }
+
+  back() {
+    this.router.navigate(['dashboard'])
+  }
+
 }
