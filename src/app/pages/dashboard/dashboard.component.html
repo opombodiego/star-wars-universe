@@ -1,0 +1,30 @@
+<div class="flex flex-row mt-4">
+  <h2 class="mb-0">Dashboard</h2>
+</div>
+
+<p-divider></p-divider>
+
+<div class="grid p-fluid">
+  <div class="col-12 md:col-6 lg:col-3">
+    <p-card header="Filmes" subheader="Confira em ordem cronológica os filmes de maiores sucessos da saga Star Wars">
+      <div class="flex justify-content-end">
+        <div class="flex align-items-center justify-content-center">
+          <button pButton pRipple type="button" icon="pi pi-angle-double-right" class="p-button-rounded" [routerLink]="['/movies']"></button>
+        </div>
+      </div>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-3">
+    <p-card header="Personagens" subheader="Conheça os mais marcantes personagens da saga Star Wars">
+      <div class="flex justify-content-end">
+        <div class="flex align-items-center justify-content-center">
+          <button pButton pRipple type="button" icon="pi pi-angle-double-right" class="p-button-rounded" [routerLink]="['/characters']"></button>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>
+
+
+

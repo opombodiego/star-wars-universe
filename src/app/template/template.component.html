@@ -1,0 +1,18 @@
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+    <h3 class="title m-0" [routerLink]="['/dashboard']">Universo Star Wars</h3>
+  </div>
+</p-toolbar>
+
+<p-menubar [model]="menuItems">
+  <ng-template pTemplate="end">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input type="text" class="p-inputtext-sm" pInputText placeholder="Pesquisar" />
+    </span>
+  </ng-template>
+</p-menubar>
+
+<div class="mx-8 my-6">
+  <router-outlet></router-outlet>
+</div>

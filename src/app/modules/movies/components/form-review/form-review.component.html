@@ -1,0 +1,38 @@
+<div class="flex flex-row justify-content-center mt-4">
+  <h2 class="mb-0">Deixe sua Opinião</h2>
+</div>
+
+<p-divider></p-divider>
+
+<p-card>
+  <form [formGroup]="form" *ngIf="form" (ngSubmit)="onSend()">
+    <div class="grid p-fluid">
+      <div class="col-12 md:col-6 lg:col-6">
+        <span class="p-float-label">
+          <input id="firstname" type="text" pInputText formControlName="firstname">
+          <label for="firstname">Nome</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-6">
+        <span class="p-float-label">
+          <input id="email" type="email" pInputText formControlName="email">
+          <label for="email">E-mail</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-12 lg:col-12 mt-3">
+        <span class="p-float-label w-12">
+          <textarea id="review" rows="5" cols="30" pInputTextarea [autoResize]="true" formControlName="review"></textarea>
+          <label for="review">Opinião</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="flex justify-content-end">
+      <div class="flex align-items-center justify-content-center">
+        <button pButton type="submit" label="Publicar" class="ml-2" [disabled]="form.invalid"></button>
+      </div>
+    </div>
+  </form>
+</p-card>

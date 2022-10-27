@@ -1,0 +1,14 @@
+:host ::ng-deep .p-card {
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+
+  .p-card-title {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+  }
+
+  .p-card-content {
+    padding: 0.5rem 0;
+  }
+}

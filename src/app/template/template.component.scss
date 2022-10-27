@@ -1,0 +1,15 @@
+:host ::ng-deep .p-toolbar {
+  padding-inline: 5rem;
+  background-color: var(--primary-color);
+  border: 0;
+  border-radius: 0;
+
+  .title {
+    color: var(--primary-color-text);
+    cursor: pointer;
+  }
+}
+
+:host ::ng-deep .p-menubar {
+  padding-inline: 4rem;
+}

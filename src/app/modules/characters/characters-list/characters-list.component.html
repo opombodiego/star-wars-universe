@@ -1,0 +1,34 @@
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<div *ngIf="!loading && charactersList">
+  <div class="flex flex-row justify-content-center mt-4">
+    <h2 class="mb-0">Personagens</h2>
+  </div>
+
+  <p-divider></p-divider>
+
+  <p-card>
+    <p-table [value]="charactersList">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nome</th>
+          <th>Gênero</th>
+          <th>Ano de Nascimento</th>
+          <th>Altura</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-char>
+        <tr>
+          <td>{{char.name}}</td>
+          <td>{{char.gender}}</td>
+          <td>{{char.birth_year}}</td>
+          <td>{{char.height}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <p-paginator [rows]="10" [totalRecords]="totalRecords" [first]="currentPage" (onPageChange)="onPageChange($event)"></p-paginator>
+  </p-card>
+</div>

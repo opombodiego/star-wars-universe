@@ -1,0 +1,25 @@
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<div *ngIf="!loading && moviesList">
+  <div class="flex flex-row justify-content-center mt-4">
+    <h2 class="mb-0">Filmes</h2>
+  </div>
+
+  <p-divider></p-divider>
+
+  <p-carousel [value]="moviesList" [numVisible]="4" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+    <ng-template let-movie pTemplate="item">
+      <p-card header="{{movie.title}}" (click)="showDetails(movie.episode_id)">
+        <ng-template pTemplate="header">
+          <img src="./../../assets/episode_{{ movie.episode_id }}.jpg" height="420">
+        </ng-template>
+        <strong>Data de Lançamento</strong>
+        <p>{{ movie.release_date | date: 'dd/MM/yyyy' }}</p>
+        <strong>Diretor</strong>
+        <p>{{ movie.director }}</p>
+      </p-card>
+    </ng-template>
+  </p-carousel>
+</div>

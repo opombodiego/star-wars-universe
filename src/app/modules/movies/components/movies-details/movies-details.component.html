@@ -1,0 +1,72 @@
+<div *ngIf="loading || !movieDetails || !moviesCharacters">
+  <app-loading></app-loading>
+</div>
+
+<div *ngIf="!loading && movieDetails && moviesCharacters">
+  <div class="flex flex-row justify-content-center mt-4">
+    <h2 class="mb-0">Detalhes do Filme</h2>
+  </div>
+
+  <p-divider></p-divider>
+
+  <p-card>
+    <div class="flex">
+      <div class="flex align-items-center justify-content-center px-3 py-1">
+        <p-image src="../../../../assets/episode_{{ movieDetails.episode_id }}.jpg" alt="Image" height="360" width="260" [preview]="true"></p-image>
+      </div>
+      <div class="flex flex-1 align-items-center justify-content-center px-5 py-1">
+        <div class="section-content">
+          <div class="flex flex-row mb-3">
+            <div class="w-12">
+              <h2 class="m-0 text-primary">{{ movieDetails.title }}</h2>
+              <p class="mt-1">{{ movieDetails.release_date }}</p>
+            </div>
+          </div>
+          <div class="flex flex-row">
+            <div class="w-12">
+              <h3 class="m-0">Descrição</h3>
+              <p>{{ movieDetails.opening_crawl }}</p>
+            </div>
+          </div>
+          <p-divider></p-divider>
+          <div class="flex flex-row">
+            <div class="w-6">
+              <h3 class="m-0">Diretor</h3>
+              <p>{{ movieDetails.director }}</p>
+            </div>
+            <div class="w-6">
+              <h3 class="m-0">Produtor</h3>
+              <p>{{ movieDetails.producer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+
+  <div class="flex flex-row justify-content-center mt-4">
+    <h2 class="mb-0">Personagens</h2>
+  </div>
+
+  <p-divider></p-divider>
+
+  <p-carousel [value]="moviesCharacters" [numVisible]="4" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+    <ng-template let-char pTemplate="item">
+      <p-card header="{{char.name}}">
+        <strong>Data de Nascimento</strong>
+        <p>{{ char.birth_year }}</p>
+        <strong>Altura</strong>
+        <p>{{ char.height }}</p>
+      </p-card>
+    </ng-template>
+  </p-carousel>
+
+  <app-form-review></app-form-review>
+
+  <div class="flex justify-content-end">
+    <div class="flex align-items-center justify-content-center">
+      <button pButton type="button" label="Voltar" class="mt-4 mr-4 p-button-secondary" (click)="back()"></button>
+    </div>
+  </div>
+
+</div>
