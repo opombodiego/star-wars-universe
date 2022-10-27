@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from './../../shared/shared.module';
 
 import { CharactersRoutingModule } from './characters-routing.module';
-import { CharactersListComponent } from './characters-list/characters-list.component';
+import { CharactersListComponent } from './components/characters-list/characters-list.component';
 
 @NgModule({
   declarations: [

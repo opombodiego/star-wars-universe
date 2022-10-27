@@ -33,6 +33,7 @@ export class FormReviewComponent implements OnInit {
         review: this.form.value.review
       }
 
+      // this.api.post('url', review)
       localStorage.setItem("review", JSON.stringify(review));
       this.form.reset();
     }
